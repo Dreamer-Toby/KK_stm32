@@ -53,3 +53,29 @@ dkms.conf
 
 # debug information files
 *.dwo
+# =============== Keil MDK Files to Ignore (Custom Addition) ===============
+
+# 编译生成目标文件
+*.axf
+*.hex
+*.bin
+
+# 中间文件、列表文件、调试文件
+*.o
+*.d
+*.crf
+*.lst
+*.map
+
+# Keil 工程管理文件和临时文件
+*.uvguix.*
+*.uvoptx
+*.uvprojx.bak
+*.uvmpw
+*.dep
+
+# 编译和调试输出文件夹 
+Listings/
+Objects/
+Output/
+DebugConfig/
