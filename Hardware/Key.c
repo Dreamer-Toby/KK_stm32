@@ -1,4 +1,5 @@
 #include "stm32f10x.h"                  // Device header
+#include "Time.h"
 
 void Key_Init(void)
 {
@@ -15,16 +16,16 @@ uint8_t Key_GetNum(void)
 	uint8_t KeyNum = 0;
 	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0)
 	{
-		Delay_ms(20);
+		Time_DelayMs(20);
 		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1) == 0);
-		Delay_ms(20);
+		Time_DelayMs(20);
 		KeyNum = 1;
 	}
 	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11) == 0)
 	{
-		Delay_ms(20);
+		Time_DelayMs(20);
 		while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11) == 0);
-		Delay_ms(20);
+		Time_DelayMs(20);
 		KeyNum = 2;
 	}
 			
